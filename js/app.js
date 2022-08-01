@@ -7,6 +7,8 @@ let arrayBombe = [];
 
 let punteggio = 0;
 
+let gameOverBoolean = false;
+
 
 bottone.addEventListener('click', function() {
 
@@ -22,10 +24,7 @@ bottone.addEventListener('click', function() {
         cella.addEventListener('click', getColourLightBlue);
         griglia.append(cella);
     }
-
-
 }); 
-
 
 //generare array di 16 numeri che saranno le nostre bombe
 //costruire funzione
@@ -53,27 +52,35 @@ function getRandomIntInclusive(min, max) {
 }
 
 
-function getColourLightBlue(clickEvent) {
-    const cella = this;
-    cella.classList.add('light-blue');
-    const numeroCella = parseInt(this.innerHTML);
-    console.log('Numero scelto: ' + numeroCella)
-    // console.log(arrayBombe.includes(numeroCella));
 
-    //condizione per assegnare colore rosso quando il click avviene nella classe con la bomba
-    if(arrayBombe.includes(numeroCella) === true){
-        cella.classList.add('red')
-        // console.log('sospendere partita')
-        // resetGame(griglia);
-        gameOver();
-    }else{
-        punteggio++;
-        console.log('Punteggio parziale: ' + punteggio)
-        if(punteggio === 87) {
-            gameWon(); 
-        } 
+function getColourLightBlue(clickEvent) {
+    
+    if(gameOverBoolean === false){
+    
+        const cella = this;
+        cella.classList.add('light-blue');
+        const numeroCella = parseInt(this.innerHTML);
+        console.log('Numero scelto: ' + numeroCella)
+        // console.log(arrayBombe.includes(numeroCella));
+
+        //condizione per assegnare colore rosso quando il click avviene nella classe con la bomba
+        if(arrayBombe.includes(numeroCella) === true){
+            cella.classList.add('red')
+            // console.log('sospendere partita')
+            // resetGame(griglia);
+            gameOver();
+        gameOverBoolean = true;
+        }else{
+            punteggio++;
+            console.log('Punteggio parziale: ' + punteggio)
+            console.log(gameOverBoolean);
+            if(punteggio === 87) {
+                gameWon(); 
+                gameOver = true;
+            } 
+        }
+
     }
-    // return cella
 }
 
 //funzione per appendere al body il messaggio con il punteggio finale dell'utente
@@ -91,6 +98,7 @@ function resetGame (variable){
     variable.innerHTML = '';
     //reset punteggio
     punteggio = 0;
+    gameOverBoolean = false;
 }
 
 function getCellaElement() {
