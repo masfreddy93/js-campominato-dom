@@ -36,8 +36,17 @@ main {
     background-color: rgb(175, 112, 165);
     border: 1px solid black;
     width: calc(100% / 10);
+    cursor: pointer;
+    font-weight: bold;
+    
 }
 
 .light-blue {
     background-color: rgb(34, 101, 132);
+    color: white;
+}
+
+.red {
+    background-color: red;
+    color: white;
 }

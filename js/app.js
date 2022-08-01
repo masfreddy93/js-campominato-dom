@@ -5,13 +5,15 @@ const bottone = document.querySelector('.bottone');
 
 let arrayBombe = [];
 
+let punteggio = 0;
+
 
 bottone.addEventListener('click', function() {
 
     // resettare la griglia
     griglia.innerHTML = '';
 
-
+    //invocare function generaBombe in nostro arrayBombe
     arrayBombe = generaBombe(numeroCelle);
 
     for(let i=0; i<numeroCelle; i++) {
@@ -20,6 +22,7 @@ bottone.addEventListener('click', function() {
         cella.addEventListener('click', getColourLightBlue);
         griglia.append(cella);
     }
+
 
 }); 
 
@@ -37,7 +40,7 @@ function generaBombe(max){
             bombe.push(n);
         }
     }
-    console.log(bombe);
+    // console.log(bombe);
     return bombe;
     
 }
@@ -53,8 +56,18 @@ function getRandomIntInclusive(min, max) {
 function getColourLightBlue(clickEvent) {
     const cella = this;
     cella.classList.add('light-blue');
-    console.log(cella.innerHTML)
-    return cella
+    const numeroCella = parseInt(this.innerHTML);
+    console.log('Numero scelto: ' + numeroCella)
+    // console.log(arrayBombe.includes(numeroCella));
+
+    //condizione per assegnare colore rosso quando il click avviene nella classe con la bomba
+    if(arrayBombe.includes(numeroCella) === true){
+        cella.classList.add('red')
+    }else{
+        punteggio++;
+        console.log('Punteggio parziale: ' + punteggio)
+    }
+    // return cella
 }
 
 function getCellaElement() {
