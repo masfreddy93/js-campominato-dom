@@ -99,6 +99,7 @@ function resetGame (variable){
     //reset punteggio
     punteggio = 0;
     gameOverBoolean = false;
+    document.querySelector('.punteggio-finale').innerHTML = '';
 }
 
 function getCellaElement() {
