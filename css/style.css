@@ -4,31 +4,61 @@
     box-sizing: border-box;
 }
 
-body {
-    height: 100vh;
+header {
+
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+header button {
+    background-color: yellow;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+header img {
+    max-height: 80px;
 }
 
 main {
+    background-color: aquamarine;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+footer .container {
+    padding: 30px;
+}
+
+.row {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 900px;
-    margin: 0 auto;
-    height: 95vh;
     flex-direction: column;
-    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 40px;
 }
 
 .griglia {
     display: flex;
-    width: 90vh;
+    width: 100%;
     justify-content: center;
     align-items: center;
     aspect-ratio: 1/1;
-    height: 90vh;
-    background-color: rgb(175, 112, 165);
     flex-wrap: wrap;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 .cella {
@@ -36,7 +66,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(175, 112, 165);
     border: 1px solid black;
     width: calc(100% / 10);
     cursor: pointer;

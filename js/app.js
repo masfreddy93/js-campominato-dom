@@ -78,11 +78,12 @@ function getColourLightBlue(clickEvent) {
 
 //funzione per appendere al body il messaggio con il punteggio finale dell'utente
 function gameOver() {
-    document.body.innerHTML += `Mi dispiace, hai perso. Il tuo punteggio è: ${punteggio} `; 
+    // document.body.innerHTML += `Mi dispiace, hai perso. Il tuo punteggio è: ${punteggio} `; 
+    document.querySelector('.punteggio-finale').innerHTML += `Mi dispiace, hai perso. Il tuo punteggio è: ${punteggio} `;
 }
 
 function gameWon() {
-    document.body.innerHTML += `GRANDE! Hai vinto `; 
+    document.querySelector('.punteggio-finale').innerHTML += `GRANDE! Hai vinto. Il tuo punteggio è: ${punteggio} `; 
 }
 
 //funzione per resettare il gioco
