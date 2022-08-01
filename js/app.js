@@ -64,7 +64,8 @@ function getColourLightBlue(clickEvent) {
     if(arrayBombe.includes(numeroCella) === true){
         cella.classList.add('red')
         // console.log('sospendere partita')
-        resetGame(griglia);
+        // resetGame(griglia);
+        gameOver();
     }else{
         punteggio++;
         console.log('Punteggio parziale: ' + punteggio)
@@ -72,8 +73,10 @@ function getColourLightBlue(clickEvent) {
     // return cella
 }
 
-
-
+//funzione per appendere al body il messaggio con il punteggio finale dell'utente
+function gameOver() {
+    document.body.innerHTML += `Il punteggio finale è: ${punteggio}`; 
+}
 
 //funzione per resettare il gioco
 function resetGame (variable){
