@@ -11,7 +11,7 @@ let punteggio = 0;
 bottone.addEventListener('click', function() {
 
     // resettare la griglia
-    griglia.innerHTML = '';
+    resetGame(griglia);
 
     //invocare function generaBombe in nostro arrayBombe
     arrayBombe = generaBombe(numeroCelle);
@@ -40,7 +40,7 @@ function generaBombe(max){
             bombe.push(n);
         }
     }
-    // console.log(bombe);
+    console.log('Bombe: ' + bombe);
     return bombe;
     
 }
@@ -63,11 +63,23 @@ function getColourLightBlue(clickEvent) {
     //condizione per assegnare colore rosso quando il click avviene nella classe con la bomba
     if(arrayBombe.includes(numeroCella) === true){
         cella.classList.add('red')
+        // console.log('sospendere partita')
+        resetGame(griglia);
     }else{
         punteggio++;
         console.log('Punteggio parziale: ' + punteggio)
     }
     // return cella
+}
+
+
+
+
+//funzione per resettare il gioco
+function resetGame (variable){
+    variable.innerHTML = '';
+    //reset punteggio
+    punteggio = 0;
 }
 
 function getCellaElement() {
