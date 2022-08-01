@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+body {
+    height: 100vh;
+}
 
 main {
     display: flex;
@@ -11,7 +14,7 @@ main {
     align-items: center;
     max-width: 900px;
     margin: 0 auto;
-    height: 100vh;
+    height: 95vh;
     flex-direction: column;
     gap: 10px;
 }

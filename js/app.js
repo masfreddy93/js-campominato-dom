@@ -69,13 +69,20 @@ function getColourLightBlue(clickEvent) {
     }else{
         punteggio++;
         console.log('Punteggio parziale: ' + punteggio)
+        if(punteggio === 87) {
+            gameWon(); 
+        } 
     }
     // return cella
 }
 
 //funzione per appendere al body il messaggio con il punteggio finale dell'utente
 function gameOver() {
-    document.body.innerHTML += `Il punteggio finale è: ${punteggio}`; 
+    document.body.innerHTML += `Mi dispiace, hai perso. Il tuo punteggio è: ${punteggio} `; 
+}
+
+function gameWon() {
+    document.body.innerHTML += `GRANDE! Hai vinto `; 
 }
 
 //funzione per resettare il gioco
@@ -90,3 +97,5 @@ function getCellaElement() {
     cella.classList.add('cella');
     return cella;
 }
+
+
