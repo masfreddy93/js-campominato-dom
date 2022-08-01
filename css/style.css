@@ -4,8 +4,16 @@
     box-sizing: border-box;
 }
 
-header {
+body {
+    height: 100vh;
+}
 
+header, footer {
+    height: 10%;
+}
+
+footer {
+    height: 5%;
 }
 
 header .container {
@@ -16,29 +24,30 @@ header .container {
 }
 
 header button {
-    background-color: yellow;
+    background-color: rgb(229, 188, 8);
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 3px 5px;
     font-size: 1.5rem;
     cursor: pointer;
 }
 
 header img {
-    max-height: 80px;
+    max-height: 50px;
 }
 
 main {
     background-color: aquamarine;
+    height: 85%;
 }
 
 .container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 50px;
+    padding: 40px;
 }
 
 footer .container {
-    padding: 30px;
+    padding: 10px;
 }
 
 .row {
@@ -46,9 +55,9 @@ footer .container {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    max-width: 600px;
+    max-width: 60%;
     margin: 0 auto;
-    gap: 40px;
+    gap: 20px;
 }
 
 .griglia {
