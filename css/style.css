@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     height: 100vh;
 }
@@ -79,15 +80,23 @@ footer .container {
     width: calc(100% / 10);
     cursor: pointer;
     font-weight: bold;
+    font-size: 0px;
     
 }
 
 .light-blue {
-    background-color: rgb(34, 101, 132);
-    color: white;
+    /* background-color: rgb(34, 101, 132); */
+    color: transparent;
+    background-image: url(https://e7.pngegg.com/pngimages/459/636/png-clipart-flower-black-and-white-common-daisy-coloring-book-free-svg-graphics-white-leaf-thumbnail.png);
+    background-position: center;
+    background-size: contain;
 }
 
 .red {
     background-color: red;
     color: white;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFlh4_oamKwu2I-8qYIKLroGkZ27rSSBbzYg&usqp=CAU);
+    /* text-transform: unset; */
+    color: transparent;
+    font-size: 0px;
 }

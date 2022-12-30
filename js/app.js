@@ -27,7 +27,7 @@ bottone.addEventListener('click', function() {
 function generaBombe(max){
     const bombe = [];
     while(bombe.length < 16){
-        const n = getRandomIntInclusive(1,max);
+        const n = getRandomIntInclusive(1,100);
         //se il numero non è presente nell'array bombe
         if(!bombe.includes(n)){
             bombe.push(n);
@@ -59,7 +59,7 @@ function getColourLightBlue(clickEvent) {
             punteggio++;
             console.log('Punteggio parziale: ' + punteggio)
             // console.log('Game over: ', gameOverBoolean);
-            if(punteggio === 87) {
+            if(punteggio === 84) {
                 gameWon(); 
                 gameOver = true;
             } 
